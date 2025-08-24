@@ -1,0 +1,50 @@
+.header
+	position: fixed
+	top: 0
+	right: 0
+	left: 0
+	z-index: var(--z-index-header)
+
+	&__grid
+		display: grid
+		grid-template-columns: repeat(24, 1fr)
+		align-items: center
+
+		padding: rem(56) rem(100)
+
+		background-image: url("/img/bg/dots.svg")
+		background-repeat: no-repeat
+		background-position: -12px 50%
+		background-size: auto
+
+		+until-tablet()
+			padding: rem(24) rem(16)
+			background-image: none
+
+	&__nav
+		grid-column: 4/20
+
+		+until-tablet()
+			display: none
+
+	&__menu
+		grid-column: -1
+
+
+// .user-info
+// 	display: flex
+// 	align-items: center
+// 	gap: rem(10)
+// 	padding: rem(3) rem(3) rem(3) rem(16)
+// 	background: var(--color-background)
+// 	border-radius: rem($radius)
+// 	cursor: pointer
+
+// 	+while-mob()
+// 		background: none
+// 		padding: 0
+
+// 	+hover
+// 		.user-info
+// 			&__name
+// 				color: var(--current-primary-color)

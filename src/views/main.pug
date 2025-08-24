@@ -1,0 +1,43 @@
+extends /base/_head
+block content
+	body.main
+
+		.layout
+			//-HEADER
+			include /sections/_header
+
+			main.page
+				section.info
+					.info__wrapper
+						.info__grid.info__grid--grow.info__grid--decor-mini
+							+image('img/logo.svg', 'alt').info__logo
+							.info__content
+								h1.info__title IT CRON
+								p.info__text Проектно-продуктовый подход к&nbsp;оказанию IT-услуг
+
+							.info__decor.info__decor-mini
+								+icon('@sprite/romb').info__decor-elem-mini.info__decor-elem-mini--1
+								+icon('@sprite/romb').info__decor-elem-mini.info__decor-elem-mini--2
+								+icon('@sprite/romb').info__decor-elem-mini.info__decor-elem-mini--3
+
+						footer.info__footer.info__grid
+							ul.social.info__footer-social
+								li.social__item
+									a(href="#", target="_blank", rel="noopener noreferrer").social__link
+										+icon('@sprite/f')
+								li.social__item
+									a(href="#", target="_blank", rel="noopener noreferrer").social__link
+										+icon('@sprite/i')
+								li.social__item
+									a(href="#", target="_blank", rel="noopener noreferrer").social__link
+										+icon('@sprite/lin')
+								li.social__item
+									a(href="#", target="_blank", rel="noopener noreferrer").social__link
+										+icon('@sprite/t')
+
+					.info__decor
+						+icon('@sprite/ellipse').info__decor-elem.info__decor-elem--top
+						+icon('@sprite/ellipse').info__decor-elem.info__decor-elem--bottom
+
+		//- SCRIPTS
+		include /base/_scripts

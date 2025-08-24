@@ -1,0 +1,244 @@
+/* stylelint-disable */
+main,
+.popup
+	p:not([class]), figure:not([class]), blockquote:not([class]),
+	ul:not([class]), ol:not([class])
+		&:not(:last-child)
+			margin-bottom: rem(16)
+	h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]), h6:not([class]), p:not([class]), img:not([class]), table:not([class]), ul:not([class]), ol:not([class])
+		&:first-child
+			margin-top: 0
+
+	h1:not([class]), h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]), h6:not([class])
+		margin-bottom: rem(24)
+		hyphens: manual
+
+		&:not(:first-child)
+			margin-top: rem(80)
+
+			+until-desktop
+				margin-top: rem(60)
+
+			+while-mob
+				margin-top: rem(30)
+
+		+ *
+			margin-top: 0
+
+	h1:not([class])
+		+titleH4
+
+	h2:not([class])
+		+titleH5
+
+	h3:not([class])
+		+titleH6
+
+	h4:not([class])
+		+titleBasic
+
+	h5:not([class])
+		+titleBasic
+
+	figure:not([class])
+		margin: 0
+
+	blockquote:not([class])
+		margin: 0
+		position: relative
+
+		> p
+			display: inline
+
+		b
+			display: block
+			font-weight: 500
+			font-size: rem(14)
+			color: var(--grey-300)
+			&:first-child
+				margin-top: rem(12)
+
+		+ figcaption
+			opacity: 0.7
+			padding-left: rem(16)
+			margin-top: rem(5)
+			font-size: rem(14)
+
+
+	img
+		&[height]
+			height: auto
+
+	table:not([class])
+		min-width: 100%
+		border-collapse: collapse
+		border: 0
+		background-color: transparent
+		font-size: em(14)
+		thead
+			th, td
+				background-color: var(--current-primary-color)
+				color: var(--color-white)
+				text-align: left
+				font-size: em(18)
+				font-weight: 400
+
+
+		td, th
+			padding: rem(16)
+			font-weight: inherit
+			background: var(--color-white)
+
+			&:not([valign]), &[valign="middle"]
+				vertical-align: middle
+			&[valign="top"]
+				vertical-align: top
+			&[valign="bottom"]
+				vertical-align: bottom
+			&:first-child
+				padding: rem(16) rem(16) rem(16) rem(24)
+			&:last-child
+				padding: rem(16) rem(24) rem(16) rem(16)
+
+		tr:not(:last-child)
+			td
+				border-bottom: 1px solid #DCDCDC
+
+	ul, ol
+		&:not([class])
+			&:before
+				display: inline-block
+			ul, ol
+				margin-bottom: rem(20)
+				margin-top: rem(20)
+			li
+				&:before
+					margin-right: rem(10)
+
+				&:not(:first-child)
+					margin-top: rem(16)
+
+	ul
+		&:not([class])
+			> li
+				padding-left: rem(28)
+				position: relative
+				&:before
+					content: ""
+					position: absolute
+					top: rem(7)
+					width: rem(8)
+					height: rem(8)
+					left: 0
+					border-radius: 50%
+					background: var(--current-primary-color)
+					display: inline-block
+			ul
+				> li
+					&:before
+						content: "—"
+						margin: 0 rem(16) rem(2) 0
+						display: inline-block
+						border-radius: 0
+						width: auto
+						height: auto
+						background: transparent
+						text-indent: 0
+						position: absolute
+						top: 0
+						left: 0
+
+	ol:not([class])
+		counter-reset: list
+		padding-left: rem(30)
+		> li
+			position: relative
+
+			&:before
+				content: counter(list)"."
+				counter-increment: list
+				position: absolute
+				top: rem(-7)
+				left: rem(-30)
+				width: auto
+				height: rem(30)
+				padding-top: rem(3)
+				display: flex
+				align-items: center
+				color: var(--current-primary-color)
+
+				+while-mob
+					top: rem(-5)
+					font-size: rem(14)
+
+			& > ol
+				padding-left: rem(40)
+				counter-reset: list-deep
+
+				+while-mob
+					padding-left: 0
+
+				&:only-child
+					margin-top: rem(16)
+
+				& > li
+
+					&::before
+						content: counter(list)"."counter(list-deep)
+						counter-increment: list-deep
+						left: rem(-40)
+
+						+while-mob
+							left: rem(-30)
+
+					& > ol
+						padding-left: rem(50)
+						counter-reset: list-deepest
+
+						+while-mob
+							padding-left: 0
+
+						& > li
+
+							&::before
+								content: counter(list)"."counter(list-deep)"."counter(list-deepest)
+								counter-increment: list-deepest
+								left: rem(-50)
+
+								+while-mob
+									left: rem(-30)
+
+	a
+		&:not([class])
+			color: #eee
+			transition: color .4s
+			&:hover, &:focus
+				color: #eee
+	.table-wrap
+		border-radius: rem(20)
+		overflow: auto
+		-ms-overflow-style: none
+		scrollbar-width: none
+		&::-webkit-scrollbar
+			width: 0
+			height: 0
+
+strong
+	display: block
+	padding: rem(32)
+	margin-top: rem(80)
+	border-radius: rem($radius)
+	background: var(--current-primary-color)
+	color: var(--color-white)
+	font-weight: 500
+	+until-desktop
+		margin-top: rem(60)
+	+while-mob
+		margin-top: rem(30)
+		padding: rem(12)
+		border-radius: rem($radius-small)
+
+
+//
+.grey-text
+	color: var(--grey-300)

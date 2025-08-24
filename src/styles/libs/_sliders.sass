@@ -1,0 +1,66 @@
+@import swiper/swiper-bundle.css
+
+.swiper
+	> *
+		min-width: 0
+
+	//navigation
+	.swiper-navigation
+		display: flex
+		align-items: center
+		gap: rem(8)
+
+	.swiper-button-prev,
+	.swiper-button-next
+		position: static
+		margin: 0
+		padding: 0
+		width: rem(40)
+		height: rem(40)
+		border-radius: 50%
+		background: var(--color-white)
+		transition: background-color .15s ease
+
+		+while-mob
+			width: rem(36)
+			height: rem(36)
+
+		&::after
+			content: ''
+			width: rem(14)
+			height: rem(10)
+			mask-repeat: no-repeat
+			mask-size: cover
+			mask-position: center
+			mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.3553 4V8.28571H1V14.7143H12.3553V19L23 11.5L12.3553 4Z'/%3E%3C/svg%3E%0A")
+			background: var(--current-primary-color)
+			border: none
+			transition: background-color .15s ease
+
+		+hover()
+			background-color: var(--current-primary-color)
+			&::after
+				background-color: var(--color-white)
+
+		&.swiper-button-disabled
+			opacity: 1
+			&::after
+				background-color: var(--grey-200)
+
+	.swiper-button-prev
+		transform: rotate(180deg)
+
+
+	//pagination
+	.swiper-pagination-bullet
+		width: rem(12)
+		height: rem(12)
+		background: var(--white-50)
+
+		+while-mob
+			width: rem(8)
+			height: rem(8)
+
+		&-active
+			background: var(--color-white)
+

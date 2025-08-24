@@ -1,0 +1,27 @@
+.menu
+	display: flex
+	gap: rem(32)
+
+	&__link
+		color: var(--color-white)
+		font-size: rem(24)
+		letter-spacing: var(--letter-spacing-s)
+		line-height: var(--line-height-xl)
+		text-decoration: none
+		text-transform: uppercase
+		transition: color .3s
+
+		&:focus-visible
+			color: var(--color-primary-500)
+
+		@include hover
+			color: var(--color-primary-500)
+			transform: rotate(360deg)
+
+
+		&:active
+			color: var(--color-primary-500)
+
+		&:disabled,
+		&.disabled
+			--btn-color: var(--color-neutral-500)
