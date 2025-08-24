@@ -2,7 +2,6 @@ phpmailer/
 package-lock.json
 node_modules/
 server/
-dist/
 .idea
 version.json
 **/*.zip

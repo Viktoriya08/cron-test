@@ -1,0 +1,1 @@
+import{L as e}from"./vendor.js";new e({elements_selector:"[data-src],[data-srcset]",class_loaded:"_lazy-loaded",use_native:!0}),document.addEventListener("DOMContentLoaded",()=>{}),window.initUI=()=>{},document.addEventListener("DOMContentLoaded",()=>{window.initUI()});
