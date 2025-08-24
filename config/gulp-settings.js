@@ -1,11 +1,11 @@
-import * as nodePath from 'path';
-import util from 'gulp-util';
+import * as nodePath from 'path'
+import util from 'gulp-util'
 
 // Получаем имя папки проекта
 const rootFolder = nodePath.basename(nodePath.resolve()),
-	buildFolder = `./dist`,
+	buildFolder = `./docs`,
 	srcFolder = `./src`,
-	assetsFolder = `${srcFolder}/assets`;
+	assetsFolder = `${srcFolder}/assets`
 
 // Пути к папкам и файлам проекта
 const path = {
@@ -62,4 +62,4 @@ const configFTP = {
 	},
 }
 
-export { path, configFTP };
+export { path, configFTP }
